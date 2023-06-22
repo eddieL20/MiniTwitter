@@ -53,7 +53,7 @@ public class UserViewListener implements ActionListener {
         DefaultListModel defaultListModel = uViewFrame.getUViewPanel().getListModel();
         TextArea messageFeed = uViewFrame.getUViewPanel().getMessageFeed();
 
-        Observer followingUsersObserver = new UserViewObserver(defaultListModel, messageFeed);
+        Observer followingUsersObserver = new UserViewObserver(defaultListModel, messageFeed, currentUser, messages);
         currentUser.subscribe(followingUsersObserver);
         messages.subscribe(followingUsersObserver);
 

@@ -5,24 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0f7b849-3590-4815-bd54-51bbd597a393" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actionlisteners/PositivePercentageListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actionlisteners/PostMessageListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actionlisteners/ShowMessageTotalListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MiniTwitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MiniTwitter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actionlisteners/AddGroupActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actionlisteners/AddGroupListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actionlisteners/AddUserActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actionlisteners/AddUserListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actionlisteners/FollowUserActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actionlisteners/FollowUserListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actionlisteners/ShowGroupTotalActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actionlisteners/ShowGroupTotalListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actionlisteners/ShowUserTotalActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actionlisteners/ShowUserTotalListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actionlisteners/UserViewActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actionlisteners/UserViewListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frames/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/MyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frames/UserViewFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/UserViewFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messages/Messages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messages/Messages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/observer/FollowUserObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer/UserViewObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/panels/UserViewPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/panels/UserViewPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visitors/CountVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visitors/CountVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visitors/StatsVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visitors/StatsVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actionlisteners/FollowUserListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actionlisteners/FollowUserListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actionlisteners/UserViewListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actionlisteners/UserViewListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minitwitternodes/UserNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minitwitternodes/UserNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/observer/UserViewObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer/UserViewObserver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,18 +63,18 @@
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/frames/MyFrame.java</url>
-          <line>59</line>
+          <line>62</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/observer/UserViewObserver.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/messages/Messages.java</url>
-          <line>33</line>
+          <line>34</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/observer/UserViewObserver.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

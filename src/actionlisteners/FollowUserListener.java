@@ -23,20 +23,20 @@ public class FollowUserListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        String newFollowerID = uViewPanel.getFollowUserTextField().getText();
+        String newFollowID = uViewPanel.getFollowUserTextField().getText();
         String currentUserID = currentUser.getNodeID();
 
         // Check if users arr trying to add themselves.
         // If so, clear the text field and return
-        if(currentUserID.equals(newFollowerID)){
+        if(currentUserID.equals(newFollowID)){
             uViewPanel.getFollowUserTextField().setText("");
             return;
         }
 
-        // Check if users are trying to follow a another user that is already being followed
+        // Check if users are trying to follow another user that is already being followed
         // If so, clear the text field and return
-        for (AppNode appNode: currentUser.getFollowers()){
-            if (newFollowerID.equals(appNode.getNodeID())){
+        for (AppNode appNode: currentUser.getFollowing()){
+            if (newFollowID.equals(appNode.getNodeID())){
                 uViewPanel.getFollowUserTextField().setText("");
                 return;
             }
@@ -45,8 +45,8 @@ public class FollowUserListener implements ActionListener {
         // Check if the new user trying to be added is in the current list of users
         // If so, add to followers of current user
         for (AppNode appNode : mainUserNode.getUsers()){
-            if (newFollowerID.equals(appNode.getNodeID()))
-                currentUser.setFollowers(appNode);
+            if (newFollowID.equals(appNode.getNodeID()))
+                currentUser.setFollowing(appNode);
         }
 
         // Clear the text after the Button is clicked

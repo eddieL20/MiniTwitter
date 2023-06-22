@@ -37,11 +37,13 @@ public class UserNode extends DefaultMutableTreeNode implements AppNode {
     }
 
     public List<AppNode> getFollowing() {
-        notifyObservers();
         return following;
     }
 
-    public void setFollowing(List<AppNode> following) { this.following = following; }
+    public void setFollowing(AppNode following) {
+        this.following.add(following);
+        notifyObservers();
+    }
 
     public List<AppNode> getUsers() {
         return Users;
