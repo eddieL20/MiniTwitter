@@ -6,15 +6,19 @@ import minitwitternodes.GroupNode;
 import minitwitternodes.RootNode;
 import minitwitternodes.UserNode;
 
+import java.util.List;
+
 public class CountVisitor implements StatsVisitor {
 
     private static int userCount;
 
     private static int groupCount;
 
+    private Messages messages;
+
     private static int messageCount;
 
-    private static int percentage;
+    private static float percentage;
 
     @Override
     public void visitTreeGroupNode(GroupNode groupNode) {
@@ -28,25 +32,32 @@ public class CountVisitor implements StatsVisitor {
 
     @Override
     public void visitMessages(Messages messages) {
+        this.messages = messages;
         messageCount = messages.getMessages().size();
     }
 
-    @Override
-    public void visitShowPositivePercentage(PositivePercentage positivePercentage) {
+    public float getPositivePercentage() {
 
-    }
+        List<String> positiveKeywords = List.of("awesome", "great", "cool", "like");
 
-    public int getUserCount() {
-        return userCount;
-    }
+        float positiveCount = 0;
 
-    public int getGroupCount() {
-        return groupCount;
-    }
-
-    public int getPercentage() {
+        for (String message: messages.getMessages()){
+            for (String keyword: positiveKeywords){
+                if (message.contains(keyword)){
+                    positiveCount++;
+                }
+            }
+        }
+        percentage = (positiveCount / messageCount) * 100;
         return percentage;
     }
+
+    public int getUserCount() { return userCount; }
+
+    public int getGroupCount() { return groupCount; }
+
+    public int getMessageCount(){ return messageCount; }
 
     @Override
     public void visitRoot(RootNode rootNode) {

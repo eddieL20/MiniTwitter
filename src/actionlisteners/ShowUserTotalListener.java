@@ -7,11 +7,11 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ShowUserTotalActionListener implements ActionListener {
+public class ShowUserTotalListener implements ActionListener {
 
     private final UserNode mainUserNode;
 
-    public ShowUserTotalActionListener(UserNode mainUserNode){
+    public ShowUserTotalListener(UserNode mainUserNode){
         this.mainUserNode = mainUserNode;
     }
     @Override

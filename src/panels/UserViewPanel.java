@@ -11,7 +11,7 @@ public class UserViewPanel extends JPanel {
     private JList<String> followersList = new JList<>(listModel);
     private TextArea messageTextArea = new TextArea(5, 20);
     private JButton postMessageButton = new JButton("Post Tweet");
-    private JList<String> newsFeed = new JList<>();
+    private TextArea messageFeed = new TextArea();
     public UserViewPanel(){
         this.setSize(new Dimension(550, 660));
         this.setLayout(new GridBagLayout());
@@ -42,11 +42,12 @@ public class UserViewPanel extends JPanel {
         c.gridx = 1;
         this.add(postMessageButton, c);
 
-        newsFeed.setPreferredSize(new Dimension(475, 250));
+        messageFeed.setPreferredSize(new Dimension(475, 250));
         c.gridx = 0;
         c.gridy = 3;
         c.gridwidth = 2;
-        this.add(newsFeed, c);
+        messageFeed.setEditable(false);
+        this.add(new JScrollPane(messageFeed), c);
 
     }
 
@@ -86,11 +87,7 @@ public class UserViewPanel extends JPanel {
         this.postMessageButton = postMessageButton;
     }
 
-    public JList<String> getNewsFeed() {
-        return newsFeed;
-    }
+    public TextArea getMessageFeed() { return messageFeed; }
 
-    public void setNewsFeed(JList<String> newsFeed) {
-        this.newsFeed = newsFeed;
-    }
+    public void setMessageFeed(TextArea messageFeed) { this.messageFeed = messageFeed; }
 }

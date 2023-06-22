@@ -7,11 +7,11 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ShowGroupTotalActionListener implements ActionListener {
+public class ShowGroupTotalListener implements ActionListener {
 
     private final GroupNode mainGroupNode;
 
-    public ShowGroupTotalActionListener(GroupNode mainGroupNode){
+    public ShowGroupTotalListener(GroupNode mainGroupNode){
         this.mainGroupNode = mainGroupNode;
     }
 

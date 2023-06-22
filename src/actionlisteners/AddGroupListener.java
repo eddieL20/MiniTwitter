@@ -11,14 +11,14 @@ import javax.swing.tree.TreePath;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AddGroupActionListener implements ActionListener {
+public class AddGroupListener implements ActionListener {
 
     private final JTree tree;
     private final UserGroupPanel ugPanel;
     private final DefaultTreeSelectionModel selectionModel;
     private final GroupNode mainGroupNode;
 
-    public AddGroupActionListener(JTree tree, DefaultTreeSelectionModel selectionModel, UserGroupPanel ugPanel, GroupNode mainGroupNode) {
+    public AddGroupListener(JTree tree, DefaultTreeSelectionModel selectionModel, UserGroupPanel ugPanel, GroupNode mainGroupNode) {
         this.tree = tree;
         this.selectionModel = selectionModel;
         this.ugPanel = ugPanel;

@@ -1,6 +1,7 @@
 package frames;
 
 import actionlisteners.*;
+import messages.Messages;
 import minitwitternodes.GroupNode;
 import minitwitternodes.RootNode;
 import minitwitternodes.UserNode;
@@ -38,6 +39,9 @@ public class MyFrame extends JFrame {
         tree.setSelectionModel(selectionModel);
         tree.setPreferredSize(new Dimension(200, 400));
 
+        // Create Message Object
+        Messages messages = new Messages();
+
         // create instance of User/Group Panel
         UserGroupPanel ugPanel = new UserGroupPanel();
 
@@ -50,11 +54,15 @@ public class MyFrame extends JFrame {
         UserNode mainUserNode = new UserNode();
 
         // Create Action Listeners
-        AddUserActionListener addUser = new AddUserActionListener(tree, selectionModel, ugPanel, mainUserNode);
-        AddGroupActionListener addGroup = new AddGroupActionListener(tree, selectionModel, ugPanel, mainGroupNode);
-        UserViewActionListener userView = new UserViewActionListener(tree, selectionModel, mainUserNode);
-        ShowUserTotalActionListener userTotal = new ShowUserTotalActionListener(mainUserNode);
-        ShowGroupTotalActionListener groupTotal = new ShowGroupTotalActionListener(mainGroupNode);
+        AddUserListener addUser = new AddUserListener(tree, selectionModel, ugPanel, mainUserNode);
+        AddGroupListener addGroup = new AddGroupListener(tree, selectionModel, ugPanel, mainGroupNode);
+
+        UserViewListener userView = new UserViewListener(tree, selectionModel, mainUserNode, messages);
+        ShowUserTotalListener userTotal = new ShowUserTotalListener(mainUserNode);
+        ShowGroupTotalListener groupTotal = new ShowGroupTotalListener(mainGroupNode);
+        ShowMessageTotalListener messageTotal = new ShowMessageTotalListener(messages);
+        PositivePercentageListener positivePercent = new PositivePercentageListener(messages);
+
 
         // Set Action Listeners to Buttons
         ugPanel.getAddUserButton().addActionListener(addUser);
@@ -62,6 +70,8 @@ public class MyFrame extends JFrame {
         ugPanel.getOpenUserViewButton().addActionListener(userView);
         ugPanel.getShowUserTotalButton().addActionListener(userTotal);
         ugPanel.getShowGroupTotalButton().addActionListener(groupTotal);
+        ugPanel.getShowMessagesTotalButton().addActionListener(messageTotal);
+        ugPanel.getShowPositivePercentageButton().addActionListener(positivePercent);
 
         // make frame  visible
         this.setVisible(true);

@@ -14,7 +14,5 @@ public interface StatsVisitor {
 
     void visitMessages(Messages messages);
 
-    void visitShowPositivePercentage(PositivePercentage positivePercentage);
-
     void visitRoot(RootNode rootNode);
 }

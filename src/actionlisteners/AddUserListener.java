@@ -11,7 +11,7 @@ import javax.swing.tree.TreePath;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AddUserActionListener implements ActionListener {
+public class AddUserListener implements ActionListener {
 
     private final JTree tree;
     private final UserGroupPanel ugPanel;
@@ -19,7 +19,7 @@ public class AddUserActionListener implements ActionListener {
 
     private final UserNode mainUserNode;
 
-    public AddUserActionListener(JTree tree, DefaultTreeSelectionModel selectionModel, UserGroupPanel ugPanel, UserNode mainUserNode){
+    public AddUserListener(JTree tree, DefaultTreeSelectionModel selectionModel, UserGroupPanel ugPanel, UserNode mainUserNode){
         this.tree = tree;
         this.selectionModel = selectionModel;
         this.ugPanel = ugPanel;
