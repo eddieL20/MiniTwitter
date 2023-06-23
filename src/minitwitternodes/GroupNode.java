@@ -18,6 +18,10 @@ public class GroupNode extends DefaultMutableTreeNode implements AppNode {
         this.nodeID = text;
     }
 
+    public boolean isLeaf(){
+        return false;
+    }
+
     public GroupNode(){}
 
     @Override

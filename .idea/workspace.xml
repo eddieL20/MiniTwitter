@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0f7b849-3590-4815-bd54-51bbd597a393" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/minitwitternodes/GroupNodeRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actionlisteners/FollowUserListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actionlisteners/FollowUserListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actionlisteners/UserViewListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actionlisteners/UserViewListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/minitwitternodes/UserNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minitwitternodes/UserNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/observer/UserViewObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer/UserViewObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minitwitternodes/GroupNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/minitwitternodes/GroupNode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,15 +33,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.appearance"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration>$USER_HOME$/.subversion</configuration>

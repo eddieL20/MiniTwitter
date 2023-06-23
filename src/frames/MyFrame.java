@@ -3,6 +3,7 @@ package frames;
 import actionlisteners.*;
 import messages.Messages;
 import minitwitternodes.GroupNode;
+import minitwitternodes.GroupNodeRenderer;
 import minitwitternodes.RootNode;
 import minitwitternodes.UserNode;
 import panels.UserGroupPanel;
@@ -38,6 +39,7 @@ public class MyFrame extends JFrame {
         selectionModel.setSelectionPath(path);
         tree.setSelectionModel(selectionModel);
         tree.setPreferredSize(new Dimension(200, 400));
+        tree.setCellRenderer(new GroupNodeRenderer());
 
         // Create Message Object
         Messages messages = new Messages();
