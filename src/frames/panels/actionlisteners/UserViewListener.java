@@ -1,12 +1,12 @@
-package actionlisteners;
+package frames.panels.actionlisteners;
 
 import frames.UserViewFrame;
-import messages.Messages;
-import minitwitternodes.GroupNode;
-import minitwitternodes.RootNode;
-import minitwitternodes.UserNode;
-import observer.UserViewObserver;
-import observer.Observer;
+import compositenodes.Messages;
+import compositenodes.GroupNode;
+import compositenodes.RootNode;
+import compositenodes.UserNode;
+import observers.UserViewObserver;
+import observers.Observer;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeSelectionModel;
@@ -53,9 +53,10 @@ public class UserViewListener implements ActionListener {
         DefaultListModel defaultListModel = uViewFrame.getUViewPanel().getListModel();
         TextArea messageFeed = uViewFrame.getUViewPanel().getMessageFeed();
 
+        // create observer to update the users being followed and the message feed
         Observer followingUsersObserver = new UserViewObserver(defaultListModel, messageFeed, currentUser, messages);
-        currentUser.subscribe(followingUsersObserver);
-        messages.subscribe(followingUsersObserver);
+        currentUser.subscribe(followingUsersObserver); // subscribe observer to current user object
+        messages.subscribe(followingUsersObserver); // subscribe observer to messages object
 
     }
 }

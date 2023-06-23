@@ -1,4 +1,4 @@
-package minitwitternodes;
+package compositenodes;
 
 import visitors.StatsVisitor;
 

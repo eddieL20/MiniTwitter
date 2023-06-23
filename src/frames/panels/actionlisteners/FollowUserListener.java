@@ -1,9 +1,8 @@
-package actionlisteners;
+package frames.panels.actionlisteners;
 
-import frames.UserViewFrame;
-import panels.UserViewPanel;
-import minitwitternodes.AppNode;
-import minitwitternodes.UserNode;
+import frames.panels.UserViewPanel;
+import compositenodes.AppNode;
+import compositenodes.UserNode;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

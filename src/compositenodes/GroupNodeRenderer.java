@@ -1,4 +1,6 @@
-package minitwitternodes;
+package compositenodes;
+
+import compositenodes.GroupNode;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeCellRenderer;
@@ -9,7 +11,7 @@ public class GroupNodeRenderer extends DefaultTreeCellRenderer {
     private Icon folderIcon;
 
     public GroupNodeRenderer() {
-        folderIcon = UIManager.getIcon("Tree.closedIcon");
+        folderIcon = UIManager.getIcon("Tree.closedIcon"); // sets the folder icon
     }
 
     @Override
@@ -18,9 +20,9 @@ public class GroupNodeRenderer extends DefaultTreeCellRenderer {
 
         super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
 
-        // Check if the node is an instance of CustomNode
+        // Check if the node is an instance of GroupNode
         if (value instanceof GroupNode) {
-            setIcon(folderIcon); // Set the folder icon for CustomNode
+            setIcon(folderIcon); // Set the folder icon for GroupNode
         }
 
         return this;

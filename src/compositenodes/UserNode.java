@@ -1,6 +1,6 @@
-package minitwitternodes;
+package compositenodes;
 
-import observer.Observer;
+import observers.Observer;
 import visitors.StatsVisitor;
 
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -10,10 +10,9 @@ import java.util.List;
 public class UserNode extends DefaultMutableTreeNode implements AppNode {
 
     private String nodeID;
-    private List<AppNode> followers = new ArrayList<>();
-    private List<AppNode> following = new ArrayList<>();
-    private List<Observer> observers = new ArrayList<>();
-    private List<AppNode> Users = new ArrayList<>();
+    private final List<AppNode> following = new ArrayList<>();
+    private final List<Observer> observers = new ArrayList<>();
+    private final List<AppNode> Users = new ArrayList<>();
 
     public UserNode(String text){
         this.setUserObject(text);
@@ -29,13 +28,6 @@ public class UserNode extends DefaultMutableTreeNode implements AppNode {
     @Override
     public void setNodeID(String nodeID) { this.nodeID = nodeID; }
 
-    public List<AppNode> getFollowers() { return followers; }
-
-    public void setFollowers(AppNode follower) {
-        this.followers.add(follower);
-        notifyObservers();
-    }
-
     public List<AppNode> getFollowing() {
         return following;
     }
@@ -45,9 +37,9 @@ public class UserNode extends DefaultMutableTreeNode implements AppNode {
         notifyObservers();
     }
 
-    public List<AppNode> getUsers() {
-        return Users;
-    }
+    public List<AppNode> getUsers() { return Users; }
+
+    public boolean isLeaf(){ return true; }
 
     public  void setUsers(UserNode userNode) {
         this.Users.add(userNode);
@@ -62,8 +54,6 @@ public class UserNode extends DefaultMutableTreeNode implements AppNode {
         this.observers.add(observer);
         notifyObservers();
     }
-
-    public void unsubscribe(Observer observer){ this.observers.remove(observer); }
 
     public void notifyObservers(){ for (Observer observer: observers) observer.update(this); }
 }

@@ -1,6 +1,6 @@
-package actionlisteners;
+package frames.panels.actionlisteners;
 
-import minitwitternodes.UserNode;
+import compositenodes.UserNode;
 import visitors.CountVisitor;
 
 import javax.swing.*;
@@ -17,23 +17,23 @@ public class ShowUserTotalListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
+        // create visitor to get user node count
         CountVisitor showUserCount = new CountVisitor();
+        mainUserNode.accept(showUserCount); // main UserNode that contains all the users accept the visitor
 
-        mainUserNode.accept(showUserCount);
-
+        // get count from visitor
         int count = showUserCount.getUserCount();
 
+        // create formatted string that will be displayed
         String message = "Total Users: " + count;
-        JLabel userMessageLabel = new JLabel(message);
+        JLabel userMessageLabel = new JLabel(message); // set string to new label
 
+        // create frame and add label to frame
         JFrame frame = new JFrame("Total Users");
         frame.setSize(200, 100);
         frame.setResizable(false);
         frame.setVisible(true);
-
         frame.add(userMessageLabel);
-
-
     }
 
 }

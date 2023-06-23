@@ -1,35 +1,36 @@
 package frames;
 
-import actionlisteners.*;
-import messages.Messages;
-import minitwitternodes.GroupNode;
-import minitwitternodes.GroupNodeRenderer;
-import minitwitternodes.RootNode;
-import minitwitternodes.UserNode;
-import panels.UserGroupPanel;
+import compositenodes.GroupNodeRenderer;
+import frames.panels.actionlisteners.*;
+import compositenodes.Messages;
+import compositenodes.*;
+import frames.panels.UserGroupPanel;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeSelectionModel;
 import javax.swing.tree.TreePath;
 import java.awt.*;
 
-public class MyFrame extends JFrame {
+public class MySingletonFrame extends JFrame {
 
-    private static MyFrame pointer;
+    private static MySingletonFrame pointer;
 
     public static void getInstance(){
         if (pointer == null) {
-            pointer = new MyFrame();
+            pointer = new MySingletonFrame();
         }
     }
 
-    private MyFrame() {
+    private MySingletonFrame() {
 
-        this.setTitle("Mini Twitter");
-
-        this.setLayout(new BorderLayout());
+        this.setTitle("Mini Twitter"); // set frame title
+        this.setLayout(new BorderLayout()); // border layout lets you add components to edges and center
         this.setSize(670, 450);
+        this.setVisible(true); // make frame  visible
+        this.setResizable(false); // frame cannot be resized
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // terminate when closed
 
+        // get the only Root Node and set it to the tree
         RootNode.getInstance().setUserObject("Root");
         JTree tree = new JTree(RootNode.getInstance());
 
@@ -58,13 +59,11 @@ public class MyFrame extends JFrame {
         // Create Action Listeners
         AddUserListener addUser = new AddUserListener(tree, selectionModel, ugPanel, mainUserNode);
         AddGroupListener addGroup = new AddGroupListener(tree, selectionModel, ugPanel, mainGroupNode);
-
         UserViewListener userView = new UserViewListener(tree, selectionModel, mainUserNode, messages);
         ShowUserTotalListener userTotal = new ShowUserTotalListener(mainUserNode);
         ShowGroupTotalListener groupTotal = new ShowGroupTotalListener(mainGroupNode);
         ShowMessageTotalListener messageTotal = new ShowMessageTotalListener(messages);
         PositivePercentageListener positivePercent = new PositivePercentageListener(messages);
-
 
         // Set Action Listeners to Buttons
         ugPanel.getAddUserButton().addActionListener(addUser);
@@ -75,12 +74,7 @@ public class MyFrame extends JFrame {
         ugPanel.getShowMessagesTotalButton().addActionListener(messageTotal);
         ugPanel.getShowPositivePercentageButton().addActionListener(positivePercent);
 
-        // make frame  visible
-        this.setVisible(true);
-        // frame cannot be resized
-        this.setResizable(false);
-        // terminate when closed
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 
 
     }

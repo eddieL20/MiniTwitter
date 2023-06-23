@@ -1,8 +1,6 @@
-package messages;
+package compositenodes;
 
-import minitwitternodes.AppNode;
-import minitwitternodes.UserNode;
-import observer.Observer;
+import observers.Observer;
 import visitors.StatsVisitor;
 
 import java.util.ArrayList;
@@ -11,40 +9,38 @@ import java.util.List;
 public class Messages implements AppNode {
 
     private String nodeID;
-    private List<Observer> observers = new ArrayList<>();
+    private final List<Observer> observers = new ArrayList<>();
 
     @Override
     public String getNodeID() {
-        return null;
+        return nodeID;
     }
 
     @Override
     public void setNodeID(String nodeID) {
-
+        this.nodeID = nodeID;
     }
 
-    private List<String> messages = new ArrayList<>();
+    private final List<String> messages = new ArrayList<>();
 
 
     public List<String> getMessages(){ return messages; }
 
     public void setMessages(UserNode user, String message){
-        message = user.getNodeID() + ": " + message;
+        message = user.getNodeID() + ": " + message; // formats message as "userID: message..."
         messages.add(message);
-        notifyObservers();
+        notifyObservers(); // notify any observers
     }
 
     public void accept(StatsVisitor visitor){ visitor.visitMessages(this);}
 
+    // used for observers to get added as subscribers
     public void subscribe(Observer observer){
         this.observers.add(observer);
         notifyObservers();
     }
 
-    public void unsubscribe(Observer observer){
-        this.observers.remove(observer);
-    }
 
-
+    // Notifies all te observers
     public void notifyObservers(){ for (Observer observer: observers) observer.update(this); }
 }

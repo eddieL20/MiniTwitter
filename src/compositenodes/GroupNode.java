@@ -1,4 +1,4 @@
-package minitwitternodes;
+package compositenodes;
 
 import visitors.StatsVisitor;
 
@@ -9,8 +9,7 @@ import java.util.List;
 public class GroupNode extends DefaultMutableTreeNode implements AppNode {
 
     private String nodeID;
-    private List<AppNode> userGroupMembers = new ArrayList<>();
-
+    private final List<AppNode> userGroupMembers = new ArrayList<>();
     private final List<AppNode> Groups = new ArrayList<>();
 
     public GroupNode(String text){
@@ -18,37 +17,26 @@ public class GroupNode extends DefaultMutableTreeNode implements AppNode {
         this.nodeID = text;
     }
 
-    public boolean isLeaf(){
-        return false;
-    }
 
     public GroupNode(){}
 
+    // used to render the folder icon on the tree
+    public boolean isLeaf(){ return false; }
+
+    // method used to accept visitors
     @Override
-    public void accept(StatsVisitor visitor) {
-        visitor.visitTreeGroupNode(this);
-    }
+    public void accept(StatsVisitor visitor) { visitor.visitTreeGroupNode(this); }
 
     @Override
-    public String getNodeID() {
-        return nodeID;
-    }
+    public String getNodeID() { return nodeID; }
 
     @Override
     public void setNodeID(String nodeID) {
         this.nodeID = nodeID;
     }
 
-    public List<AppNode> getUserGroupMembers() {
-        return userGroupMembers;
-    }
-
     public void setUserGroupMembers(AppNode appNode) {
         this.userGroupMembers.add(appNode);
-    }
-
-    public void setUserGroupMembers(List<AppNode> userGroupMembers) {
-        this.userGroupMembers = userGroupMembers;
     }
 
     public List<AppNode> getGroups() {

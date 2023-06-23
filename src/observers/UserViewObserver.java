@@ -1,8 +1,8 @@
-package observer;
+package observers;
 
-import messages.Messages;
-import minitwitternodes.AppNode;
-import minitwitternodes.UserNode;
+import compositenodes.Messages;
+import compositenodes.AppNode;
+import compositenodes.UserNode;
 
 import javax.swing.*;
 import java.awt.*;

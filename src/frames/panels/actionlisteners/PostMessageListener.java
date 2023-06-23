@@ -1,8 +1,9 @@
-package actionlisteners;
+package frames.panels.actionlisteners;
 
-import messages.Messages;
-import minitwitternodes.UserNode;
-import panels.UserViewPanel;
+import compositenodes.AppNode;
+import compositenodes.Messages;
+import compositenodes.UserNode;
+import frames.panels.UserViewPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,9 +23,17 @@ public class PostMessageListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        // get current message from message text area
         String currentMessage = userViewPanel.getMessageTextArea().getText();
-        messages.setMessages(currentUser, currentMessage);
 
+        // if message is empty string or just spaces reset message text area and return
+        if (currentMessage.matches("^$|\\s+")){
+            userViewPanel.getMessageTextArea().setText("");
+            return;
+        }
+
+        // set message to message object, then clear message text area
+        messages.setMessages(currentUser, currentMessage);
         userViewPanel.getMessageTextArea().setText("");
     }
 }

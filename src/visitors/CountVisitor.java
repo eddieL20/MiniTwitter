@@ -1,10 +1,9 @@
 package visitors;
 
-import messages.Messages;
-import messages.PositivePercentage;
-import minitwitternodes.GroupNode;
-import minitwitternodes.RootNode;
-import minitwitternodes.UserNode;
+import compositenodes.Messages;
+import compositenodes.GroupNode;
+import compositenodes.RootNode;
+import compositenodes.UserNode;
 
 import java.util.List;
 
@@ -38,10 +37,12 @@ public class CountVisitor implements StatsVisitor {
 
     public float getPositivePercentage() {
 
-        List<String> positiveKeywords = List.of("awesome", "great", "cool", "like");
+        // list of words to check for each messages to count as a positive overall message
+        List<String> positiveKeywords = List.of("awesome", "great", "cool", "like", "amazing");
 
-        float positiveCount = 0;
+        float positiveCount = 0; // keeps count of positive messages
 
+        // check each message to see if it contains any of the keywords
         for (String message: messages.getMessages()){
             for (String keyword: positiveKeywords){
                 if (message.contains(keyword)){
@@ -49,6 +50,8 @@ public class CountVisitor implements StatsVisitor {
                 }
             }
         }
+
+        // format the result and return
         percentage = (positiveCount / messageCount) * 100;
         return percentage;
     }

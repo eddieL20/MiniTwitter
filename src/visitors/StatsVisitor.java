@@ -1,10 +1,9 @@
 package visitors;
 
-import messages.Messages;
-import messages.PositivePercentage;
-import minitwitternodes.GroupNode;
-import minitwitternodes.RootNode;
-import minitwitternodes.UserNode;
+import compositenodes.Messages;
+import compositenodes.GroupNode;
+import compositenodes.RootNode;
+import compositenodes.UserNode;
 
 public interface StatsVisitor {
 
