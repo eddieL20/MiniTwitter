@@ -16,13 +16,14 @@ public class MySingletonFrame extends JFrame {
     private static MySingletonFrame pointer;
 
     // double-checked locking
-    public static void getInstance(){
+    public static MySingletonFrame getInstance(){
         if (pointer == null) {
             synchronized (MySingletonFrame.class){
                 if (pointer == null)
                     pointer = new MySingletonFrame();
             }
         }
+        return pointer;
     }
 
     private MySingletonFrame() {

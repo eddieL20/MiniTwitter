@@ -11,7 +11,11 @@ public class RootNode extends DefaultMutableTreeNode implements AppNode {
 
     // Creates only one instance of RootNode "Singleton Pattern"
     public static RootNode getInstance(){
-        if (pointer == null){ pointer = new RootNode(); }
+        if (pointer == null){
+            synchronized (RootNode.class){
+                if (pointer == null){ pointer = new RootNode(); }
+            }
+        }
         return pointer;
     }
 
