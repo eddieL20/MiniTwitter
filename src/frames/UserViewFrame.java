@@ -18,13 +18,13 @@ public class UserViewFrame extends JFrame {
         // set size and appearance of frame
         this.setLayout(new BorderLayout());
         this.setVisible(true);
-        this.setSize(new Dimension(600, 700));
+        this.setSize(new Dimension(600, 800));
         this.setResizable(false);
         this.setBackground(Color.gray);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         //add UserViewPanel object to frame
-        this.add(uViewPanel, BorderLayout.NORTH);
+        this.add(uViewPanel, BorderLayout.CENTER);
 
         // create Action Listeners
         FollowUserListener followUser = new FollowUserListener(currentUser, mainUserNode, uViewPanel);

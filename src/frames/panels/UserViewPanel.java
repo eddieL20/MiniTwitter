@@ -11,8 +11,9 @@ public class UserViewPanel extends JPanel {
     private final TextArea messageTextArea = new TextArea(5, 20);
     private final JButton postMessageButton = new JButton("Post Tweet");
     private final TextArea messageFeed = new TextArea();
+
     public UserViewPanel(){
-        this.setSize(new Dimension(550, 660));
+        this.setSize(new Dimension(550, 790));
         this.setLayout(new GridBagLayout()); // allows for grid layout
         this.setBackground(Color.GRAY);
 
@@ -30,24 +31,50 @@ public class UserViewPanel extends JPanel {
         c.gridx = 1;
         this.add(followUserButton, c);
 
+        c.gridx = 0;
+        c.gridy = 1;
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridwidth = 1;
+        c.insets = new Insets(1, 0, 1, 1);
+        JLabel currentFollowingLabel = new JLabel("Currently Following");
+        this.add(currentFollowingLabel, c);
+
         JList<String> followersList = new JList<>(listModel);
         followersList.setPreferredSize(new Dimension(475, 250));
         c.gridx = 0;
-        c.gridy = 1;
+        c.gridy = 2;
         c.gridwidth = 2;
+        c.insets = new Insets(0, 0, 10, 0);
         this.add(followersList, c);
 
         c.gridx = 0;
-        c.gridy = 2;
+        c.gridy = 3;
         c.gridwidth = 1;
+        c.insets = new Insets(1, 0, 1, 1);
+        JLabel createMessageLabel = new JLabel("Create Message");
+        this.add(createMessageLabel, c);
+
+        c.gridx = 0;
+        c.gridy = 4;
+        c.gridwidth = 1;
+        c.insets = new Insets(0, 0, 10, 0);
+        c.fill = GridBagConstraints.HORIZONTAL;
         this.add(messageTextArea, c);
 
         c.gridx = 1;
+        c.fill = GridBagConstraints.BASELINE;
         this.add(postMessageButton, c);
+
+        c.gridx = 0;
+        c.gridy = 5;
+        c.insets = new Insets(1, 0, 1, 1);
+        c.fill = GridBagConstraints.HORIZONTAL;
+        JLabel messageFeedLabel = new JLabel("Message Feed");
+        this.add(messageFeedLabel, c);
 
         messageFeed.setPreferredSize(new Dimension(475, 250));
         c.gridx = 0;
-        c.gridy = 3;
+        c.gridy = 6;
         c.gridwidth = 2;
         messageFeed.setEditable(false);
         this.add(new JScrollPane(messageFeed), c);

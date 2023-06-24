@@ -11,6 +11,7 @@ public class UserNode extends DefaultMutableTreeNode implements AppNode {
 
     private String nodeID;
     private final List<AppNode> following = new ArrayList<>();
+    private final List<AppNode> followers = new ArrayList<>();
     private final List<Observer> observers = new ArrayList<>();
     private final List<AppNode> Users = new ArrayList<>();
 
@@ -37,13 +38,15 @@ public class UserNode extends DefaultMutableTreeNode implements AppNode {
         notifyObservers();
     }
 
+    public List<AppNode> getFollowers() { return followers; }
+
+    public void setFollowers(AppNode node){ this.followers.add(node); }
+
     public List<AppNode> getUsers() { return Users; }
 
     public boolean isLeaf(){ return true; }
 
-    public  void setUsers(UserNode userNode) {
-        this.Users.add(userNode);
-    }
+    public  void setUsers(UserNode userNode) { this.Users.add(userNode); }
 
     // Implement Observer Pattern with the following three methods
 

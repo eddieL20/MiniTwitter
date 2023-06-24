@@ -32,7 +32,7 @@ public class FollowUserListener implements ActionListener {
             return;
         }
 
-        // Check if users are trying to follow another user that is already being followed
+        // Check if users are trying to follow a user that is already being followed
         // If so, clear the text field and return
         for (AppNode appNode: currentUser.getFollowing()){
             if (newFollowID.equals(appNode.getNodeID())){
@@ -44,8 +44,11 @@ public class FollowUserListener implements ActionListener {
         // Check if the new user trying to be added is in the current list of users
         // If so, add to followers of current user
         for (AppNode appNode : mainUserNode.getUsers()){
-            if (newFollowID.equals(appNode.getNodeID()))
-                currentUser.setFollowing(appNode);
+            if (newFollowID.equals(appNode.getNodeID())) {
+                currentUser.setFollowing(appNode); // adds newFollowID to currentUser's following AppNode List.
+                ((UserNode) appNode).setFollowers(currentUser); // adds currentUser to that same newFollowID's
+            }                                                   // followers List that also consists of AppNodes.
+
         }
 
         // Clear the text after the Button is clicked

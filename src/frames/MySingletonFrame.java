@@ -15,9 +15,13 @@ public class MySingletonFrame extends JFrame {
 
     private static MySingletonFrame pointer;
 
+    // double-checked locking
     public static void getInstance(){
         if (pointer == null) {
-            pointer = new MySingletonFrame();
+            synchronized (MySingletonFrame.class){
+                if (pointer == null)
+                    pointer = new MySingletonFrame();
+            }
         }
     }
 
@@ -49,6 +53,8 @@ public class MySingletonFrame extends JFrame {
         UserGroupPanel ugPanel = new UserGroupPanel();
 
         // add tree and User/Group Panel to frame. tree to the left and ugPanel to the right
+        JLabel TreeTitle = new JLabel("Tree View");
+        this.add(TreeTitle, BorderLayout.NORTH);
         this.add(tree, BorderLayout.WEST);
         this.add(ugPanel, BorderLayout.EAST);
 
