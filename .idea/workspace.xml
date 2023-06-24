@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0f7b849-3590-4815-bd54-51bbd597a393" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compositenodes/UserNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/compositenodes/UserNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frames/MySingletonFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/MySingletonFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frames/UserViewFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/UserViewFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frames/panels/UserViewPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/panels/UserViewPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frames/panels/actionlisteners/FollowUserListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/panels/actionlisteners/FollowUserListener.java" afterDir="false" />
-    </list>
+    <list default="true" id="d0f7b849-3590-4815-bd54-51bbd597a393" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
