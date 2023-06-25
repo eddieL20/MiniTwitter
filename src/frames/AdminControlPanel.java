@@ -11,22 +11,22 @@ import javax.swing.tree.DefaultTreeSelectionModel;
 import javax.swing.tree.TreePath;
 import java.awt.*;
 
-public class MySingletonFrame extends JFrame {
+public class AdminControlPanel extends JFrame {
 
-    private static MySingletonFrame pointer;
+    private static AdminControlPanel pointer;
 
     // double-checked locking
-    public static MySingletonFrame getInstance(){
+    public static AdminControlPanel getInstance(){
         if (pointer == null) {
-            synchronized (MySingletonFrame.class){
+            synchronized (AdminControlPanel.class){
                 if (pointer == null)
-                    pointer = new MySingletonFrame();
+                    pointer = new AdminControlPanel();
             }
         }
         return pointer;
     }
 
-    private MySingletonFrame() {
+    private AdminControlPanel() {
 
         this.setTitle("Mini Twitter"); // set frame title
         this.setLayout(new BorderLayout()); // border layout lets you add components to edges and center
@@ -80,9 +80,6 @@ public class MySingletonFrame extends JFrame {
         ugPanel.getShowGroupTotalButton().addActionListener(groupTotal);
         ugPanel.getShowMessagesTotalButton().addActionListener(messageTotal);
         ugPanel.getShowPositivePercentageButton().addActionListener(positivePercent);
-
-
-
 
     }
 
