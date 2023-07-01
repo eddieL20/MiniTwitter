@@ -5,10 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0f7b849-3590-4815-bd54-51bbd597a393" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Driver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frames/panels/actionlisteners/LastUpdatedActionListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frames/panels/actionlisteners/ValicationActionListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/validationcommands/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/validationcommands/Validate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/validationcommands/checkDuplicates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/validationcommands/checkEmptySpaces.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MiniTwitter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frames/MySingletonFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/AdminControlPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compositenodes/GroupNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/compositenodes/GroupNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compositenodes/Messages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/compositenodes/Messages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compositenodes/UserNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/compositenodes/UserNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frames/AdminControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/AdminControlPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frames/panels/UserGroupPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/panels/UserGroupPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frames/panels/UserViewPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/panels/UserViewPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frames/panels/actionlisteners/AddGroupListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/panels/actionlisteners/AddGroupListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frames/panels/actionlisteners/AddUserListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/panels/actionlisteners/AddUserListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frames/panels/actionlisteners/PostMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/panels/actionlisteners/PostMessageListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frames/panels/actionlisteners/UserViewListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/panels/actionlisteners/UserViewListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/observers/UserViewObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/observers/UserViewObserver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +32,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -38,6 +53,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,

@@ -11,19 +11,31 @@ public class UserViewPanel extends JPanel {
     private final TextArea messageTextArea = new TextArea(5, 20);
     private final JButton postMessageButton = new JButton("Post Tweet");
     private final TextArea messageFeed = new TextArea();
+    private final JLabel creationTimeLabel = new JLabel();
+    private final JLabel lastUpdatedLabel = new JLabel();
 
     public UserViewPanel(){
-        this.setSize(new Dimension(550, 790));
+        this.setSize(new Dimension(450, 790));
         this.setLayout(new GridBagLayout()); // allows for grid layout
         this.setBackground(Color.GRAY);
 
         GridBagConstraints c = new GridBagConstraints(); // needed to set constrains for components
 
+
         c.gridx = 0; // sets column value
         c.gridy = 0; // sets row value
-        c.fill = GridBagConstraints.HORIZONTAL; // fills in space available
+        c.fill = GridBagConstraints.RELATIVE; // fills in space available
+        c.insets = new Insets(0, 0, 5, 0); // sets padding
         c.gridwidth = 1; // width is set to one column size
-        c.insets = new Insets(5, 5, 5, 5); // sets padding
+
+        this.add(creationTimeLabel, c);
+
+        c.gridx = 1;
+        this.add(lastUpdatedLabel, c);
+
+        c.gridx = 0;
+        c.gridy = 1;
+        c.insets = new Insets(0, 5, 5, 5); // sets padding
         this.add(followUserTextField, c); // add component with constraints
 
         // Same process for all the components
@@ -32,7 +44,7 @@ public class UserViewPanel extends JPanel {
         this.add(followUserButton, c);
 
         c.gridx = 0;
-        c.gridy = 1;
+        c.gridy = 2;
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth = 1;
         c.insets = new Insets(1, 0, 1, 1);
@@ -42,20 +54,20 @@ public class UserViewPanel extends JPanel {
         JList<String> followersList = new JList<>(listModel);
         followersList.setPreferredSize(new Dimension(475, 250));
         c.gridx = 0;
-        c.gridy = 2;
+        c.gridy = 3;
         c.gridwidth = 2;
         c.insets = new Insets(0, 0, 10, 0);
         this.add(followersList, c);
 
         c.gridx = 0;
-        c.gridy = 3;
+        c.gridy = 4;
         c.gridwidth = 1;
         c.insets = new Insets(1, 0, 1, 1);
         JLabel createMessageLabel = new JLabel("Create Message");
         this.add(createMessageLabel, c);
 
         c.gridx = 0;
-        c.gridy = 4;
+        c.gridy = 5;
         c.gridwidth = 1;
         c.insets = new Insets(0, 0, 10, 0);
         c.fill = GridBagConstraints.HORIZONTAL;
@@ -66,7 +78,7 @@ public class UserViewPanel extends JPanel {
         this.add(postMessageButton, c);
 
         c.gridx = 0;
-        c.gridy = 5;
+        c.gridy = 6;
         c.insets = new Insets(1, 0, 1, 1);
         c.fill = GridBagConstraints.HORIZONTAL;
         JLabel messageFeedLabel = new JLabel("Message Feed");
@@ -74,7 +86,7 @@ public class UserViewPanel extends JPanel {
 
         messageFeed.setPreferredSize(new Dimension(475, 250));
         c.gridx = 0;
-        c.gridy = 6;
+        c.gridy = 7;
         c.gridwidth = 2;
         messageFeed.setEditable(false);
         this.add(new JScrollPane(messageFeed), c);
@@ -97,4 +109,11 @@ public class UserViewPanel extends JPanel {
 
     public TextArea getMessageFeed() { return messageFeed; }
 
+    public JLabel getCreationTimeLabel() {
+        return creationTimeLabel;
+    }
+
+    public JLabel getLastUpdatedLabel() {
+        return lastUpdatedLabel;
+    }
 }

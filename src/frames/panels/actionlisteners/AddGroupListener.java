@@ -38,14 +38,6 @@ public class AddGroupListener implements ActionListener {
             return;
         }
 
-        // if new group ID is already in the tree, do not add
-        for (AppNode groupNode: mainGroupNode.getGroups()){
-            if (nodeID.equals(groupNode.getNodeID())){
-                ugPanel.getGroupTextField().setText("");
-                return;
-            }
-        }
-
         // create new group and set the group ID
         GroupNode newGroupNode = new GroupNode(nodeID);
         mainGroupNode.setGroups(newGroupNode);

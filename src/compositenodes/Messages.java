@@ -29,6 +29,13 @@ public class Messages implements AppNode {
     public void setMessages(UserNode user, String message){
         message = user.getNodeID() + ": " + message; // formats message as "userID: message..."
         messages.add(message);
+
+        user.setLastUpdatedTime(); // new update time for user that posted message
+
+        for (AppNode follower: user.getFollowers()){
+            ((UserNode) follower).setLastUpdatedTime(); // new update time for all the followers
+        }
+
         notifyObservers(); // notify any observers
     }
 

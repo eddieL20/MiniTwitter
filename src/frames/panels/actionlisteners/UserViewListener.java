@@ -5,6 +5,7 @@ import compositenodes.Messages;
 import compositenodes.GroupNode;
 import compositenodes.RootNode;
 import compositenodes.UserNode;
+import frames.panels.UserViewPanel;
 import observers.UserViewObserver;
 import observers.Observer;
 
@@ -13,6 +14,7 @@ import javax.swing.tree.DefaultTreeSelectionModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 
 public class UserViewListener implements ActionListener {
 
@@ -42,19 +44,31 @@ public class UserViewListener implements ActionListener {
 
         // Create a UserViewFrame that shows "User View: " followed by their ID as the title
         String title = "User View: " + currentUser.getNodeID();
-        UserViewFrame uViewFrame = new UserViewFrame(currentUser, mainUserNode, messages); //TODO
+        UserViewFrame uViewFrame = new UserViewFrame(currentUser, mainUserNode, messages);
 
         // Set title for frame
         uViewFrame.setTitle(title);
+
+        // set text for the Creation Time Label at the top left of User View
+        Date creationDate = new Date(currentUser.getCreationTime());
+        uViewFrame.getUViewPanel().getCreationTimeLabel().setText(
+                "<html>Creation Time:<br>" + creationDate.toString() + "</html>"
+        );
+
+        // set text for the Last Updated Time Label at the top right of the UserView
+        Date lastUpdate = new Date(currentUser.getLastUpdatedTime());
+        uViewFrame.getUViewPanel().getLastUpdatedLabel().setText(
+                "<html>Last Updated:<br>" + lastUpdate.toString() + "</html>"
+        );
 
         // Create and subscribe observer to the currently selected user
         // must pass the List model as a parameter when instantiating the UserViewObserver
         // This updates the JList that shows who the current user is Following
         DefaultListModel defaultListModel = uViewFrame.getUViewPanel().getListModel();
-        TextArea messageFeed = uViewFrame.getUViewPanel().getMessageFeed();
+        UserViewPanel userViewPanel = uViewFrame.getUViewPanel();
 
         // create observer to update the users being followed and the message feed
-        Observer followingUsersObserver = new UserViewObserver(defaultListModel, messageFeed, currentUser, messages);
+        Observer followingUsersObserver = new UserViewObserver(defaultListModel, userViewPanel, currentUser, messages);
         currentUser.subscribe(followingUsersObserver); // subscribe observer to current user object
         messages.subscribe(followingUsersObserver); // subscribe observer to messages object
 

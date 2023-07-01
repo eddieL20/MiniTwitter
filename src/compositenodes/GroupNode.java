@@ -11,14 +11,18 @@ public class GroupNode extends DefaultMutableTreeNode implements AppNode {
     private String nodeID;
     private final List<AppNode> userGroupMembers = new ArrayList<>();
     private final List<AppNode> Groups = new ArrayList<>();
+    private long creationTime;
 
     public GroupNode(String text){
         this.setUserObject(text);
         this.nodeID = text;
+        setCreationTime(); // set creation time when constructor is used
     }
 
 
-    public GroupNode(){}
+    public GroupNode(){
+        setCreationTime(); // set creation time when constructor is used
+    }
 
     // used to render the folder icon on the tree
     public boolean isLeaf(){ return false; }
@@ -45,5 +49,13 @@ public class GroupNode extends DefaultMutableTreeNode implements AppNode {
 
     public void setGroups(GroupNode group) {
         Groups.add(group);
+    }
+
+    public long getCreationTime() {
+        return creationTime;
+    }
+
+    public void setCreationTime() {
+        this.creationTime = System.currentTimeMillis();
     }
 }

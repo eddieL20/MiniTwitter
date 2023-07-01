@@ -39,12 +39,12 @@ public class AddUserListener implements ActionListener {
         }
 
         // if new userID is already in the tree, do not add
-        for (AppNode userNode: mainUserNode.getUsers()){
-            if (nodeID.equals(userNode.getNodeID())){
-                ugPanel.getUserTextField().setText("");
-                return;
-            }
-        }
+//        for (AppNode userNode: mainUserNode.getUsers()){
+//            if (nodeID.equals(userNode.getNodeID())){
+//                ugPanel.getUserTextField().setText("");
+//                return;
+//            }
+//        }
 
         // Create new userNode and set new user ID
         UserNode newUserNode = new UserNode(nodeID);

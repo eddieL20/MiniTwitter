@@ -30,7 +30,7 @@ public class AdminControlPanel extends JFrame {
 
         this.setTitle("Mini Twitter"); // set frame title
         this.setLayout(new BorderLayout()); // border layout lets you add components to edges and center
-        this.setSize(670, 450);
+        this.setSize(720, 550);
         this.setVisible(true); // make frame  visible
         this.setResizable(false); // frame cannot be resized
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // terminate when closed
@@ -71,6 +71,8 @@ public class AdminControlPanel extends JFrame {
         ShowGroupTotalListener groupTotal = new ShowGroupTotalListener(mainGroupNode);
         ShowMessageTotalListener messageTotal = new ShowMessageTotalListener(messages);
         PositivePercentageListener positivePercent = new PositivePercentageListener(messages);
+        ValicationActionListener validate = new ValicationActionListener(mainUserNode, mainGroupNode, ugPanel);
+        LastUpdatedActionListener lastUpdated = new LastUpdatedActionListener(mainUserNode, ugPanel);
 
         // Set Action Listeners to Buttons
         ugPanel.getAddUserButton().addActionListener(addUser);
@@ -80,6 +82,8 @@ public class AdminControlPanel extends JFrame {
         ugPanel.getShowGroupTotalButton().addActionListener(groupTotal);
         ugPanel.getShowMessagesTotalButton().addActionListener(messageTotal);
         ugPanel.getShowPositivePercentageButton().addActionListener(positivePercent);
+        ugPanel.getValidationButton().addActionListener(validate);
+        ugPanel.getLastUpdatedButton().addActionListener(lastUpdated);
 
     }
 

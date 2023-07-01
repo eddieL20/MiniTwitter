@@ -7,6 +7,7 @@ import frames.panels.UserViewPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 
 public class PostMessageListener implements ActionListener {
 
@@ -35,5 +36,10 @@ public class PostMessageListener implements ActionListener {
         // set message to message object, then clear message text area
         messages.setMessages(currentUser, currentMessage);
         userViewPanel.getMessageTextArea().setText("");
+
+        Date date = new Date(currentUser.getLastUpdatedTime());
+        userViewPanel.getLastUpdatedLabel().setText(
+                "<html>Last Updated:<br>"  + date.toString() + "</html>"
+        );
     }
 }

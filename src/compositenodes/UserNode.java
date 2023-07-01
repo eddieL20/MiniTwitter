@@ -14,13 +14,18 @@ public class UserNode extends DefaultMutableTreeNode implements AppNode {
     private final List<AppNode> followers = new ArrayList<>();
     private final List<Observer> observers = new ArrayList<>();
     private final List<AppNode> Users = new ArrayList<>();
+    private long creationTime;
+    private long lastUpdatedTime;
 
     public UserNode(String text){
         this.setUserObject(text);
         this.nodeID = text;
+        setCreationTime(); // set creation time when constructor is used
     }
 
-    public UserNode(){}
+    public UserNode(){
+        setCreationTime(); // set creation time when constructor is used
+    }
 
 
     @Override
@@ -59,4 +64,21 @@ public class UserNode extends DefaultMutableTreeNode implements AppNode {
     }
 
     public void notifyObservers(){ for (Observer observer: observers) observer.update(this); }
+
+    public long getCreationTime() {
+        return creationTime;
+    }
+
+    public void setCreationTime() {
+        this.creationTime = System.currentTimeMillis();
+        setLastUpdatedTime(); // set initial lastUpdatedTime to the creation time
+    }
+
+    public long getLastUpdatedTime() {
+        return lastUpdatedTime;
+    }
+
+    public void setLastUpdatedTime() {
+        this.lastUpdatedTime = System.currentTimeMillis();
+    }
 }
